@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mom's Bakehouse CZ</title>
+    <link rel="preload" as="image" href="hlavni_fotka.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        html { scroll-behavior: smooth !important; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#eab308'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased bg-white text-slate-800">
+
+    <header class="relative min-h-screen flex flex-col justify-between isolate overflow-hidden">
+        <img src="hlavni_fotka.jpg" alt="Mom's Bakehouse" class="absolute inset-0 w-full h-full object-cover -z-20" loading="eager" decoding="sync">
+        <div class="absolute inset-0 bg-black/60 -z-10"></div>
+
+        <nav class="relative z-50 w-full bg-transparent">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="#" class="flex items-center gap-3 text-lg sm:text-xl md:text-2xl font-bold text-white tracking-widest uppercase hover:text-accent transition-colors">
+                        <img src="icon.png" alt="Logo Mom's Bakehouse" class="h-12 w-auto rounded-full border-2 border-accent/50 bg-primary">
+                        Mom's Bakehouse
+                    </a>
+
+                    <button id="mobile-menu-btn" type="button" class="lg:hidden text-white hover:text-accent focus:outline-none p-2" aria-label="Menu">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    
+                    <ul class="hidden lg:flex items-center space-x-8 text-sm md:text-base font-semibold text-white/95">
+                        <li><a href="#o-nas" class="hover:text-accent transition-colors">O nás</a></li>
+                        <li><a href="#nabidka" class="hover:text-accent transition-colors">Naše nabídka</a></li>
+                        <li><a href="#galerie" class="hover:text-accent transition-colors">Galerie</a></li>
+                        <li><a href="#reference" class="hover:text-accent transition-colors">Reference</a></li>
+                        <li><a href="#kontakt" class="hover:text-accent transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div id="mobile-menu" class="hidden lg:hidden pb-6 pt-4">
+                    <ul class="flex flex-col space-y-4 text-base font-semibold text-white/90">
+                        <li><a href="#o-nas" class="mobile-nav-link block hover:text-accent">O nás</a></li>
+                        <li><a href="#nabidka" class="mobile-nav-link block hover:text-accent">Naše nabídka</a></li>
+                        <li><a href="#galerie" class="mobile-nav-link block hover:text-accent">Galerie</a></li>
+                        <li><a href="#reference" class="mobile-nav-link block hover:text-accent">Reference</a></li>
+                        <li><a href="#kontakt" class="mobile-nav-link block hover:text-accent">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="relative z-10 flex-grow flex items-center justify-center text-center px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-white drop-shadow-lg">
+                    <span class="block text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-2">Mom's Bakehouse</span>
+                    <span class="block text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-widest text-accent mt-4">Kladno | +420 703 977 092</span>
+                </h1>
+                <p class="mt-6 text-xl md:text-2xl text-white/90 drop-shadow-md font-light">
+                    Rodinná kavárna s výrobou vlastních zákusků a skvělých snídaní. Oáza klidu v centru města.
+                </p>
+                <div class="w-24 h-1.5 bg-accent mx-auto my-6 rounded-full"></div>
+                <div class="mt-8">
+                    <a href="#kontakt" class="inline-block px-8 py-3 bg-accent hover:bg-yellow-400 text-primary font-bold border border-transparent rounded transition-all" style="margin: 5px;">
+                        Kontaktujte nás
+                    </a>
+                    <a href="#galerie" class="inline-block px-8 py-3 bg-transparent hover:bg-white/15 text-white font-medium border border-white/50 backdrop-blur-sm transition-all rounded" style="margin: 5px; background-color: rgba(255,255,255,0.1);">
+                        Naše dobroty
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative z-10 pb-8 text-center">
+            <a href="#o-nas" class="text-white/70 hover:text-accent inline-block animate-bounce transition-colors" aria-label="Přejít na obsah">
+                <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="o-nas" class="py-16 md:py-24 bg-white">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase tracking-wide">O nás</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mb-8 rounded-full"></div>
+                <div class="space-y-6 text-lg md:text-xl leading-relaxed text-slate-600">
+                    <p>
+                        Jsme rodinná kavárna s výrobou vlastních zákusků a skvělých snídaní, jak o nás říkáte. Oáza klidu v centru města. Denně připravujeme zákusky, dorty i snídaně pro lidi, kteří mají rádi kvalitní suroviny a třeba i trpí nějakou nechtěnou intolerancí bez lepku, mléka, cukru, vajec, sóji a jejich kombinace. 
+                    </p>
+                    <p class="font-medium text-primary">
+                        Mom's Bakehouse BEZCUKRárna, LOW CARB a snídaňová kavárna.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nabidka" class="py-12 md:py-16 bg-slate-50 border-y border-slate-200/80">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 text-center uppercase tracking-wide">Naše nabídka</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mb-10 rounded-full"></div>
+                
+                <div class="flex flex-col md:flex-row gap-12 lg:gap-16 items-start">
+                    <div class="w-full md:w-1/2">
+                        <img src="2fd5.jpeg" alt="Snídaně a káva" class="w-full h-auto border border-slate-200 object-cover rounded-lg shadow-sm">
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 space-y-8 mt-4 md:mt-0">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 uppercase tracking-wide flex items-center gap-3">
+                                <span class="w-2.5 h-2.5 bg-accent inline-block rounded-full"></span>
+                                Snídaně a káva
+                            </h3>
+                            <ul class="space-y-2 text-base md:text-lg text-slate-600 list-disc ml-6">
+                                <li>Skvělé snídaně podáváme do 14:00</li>
+                                <li>Kvalitní výběrová káva</li>
+                                <li>Příjemné prostředí pro start dne</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 uppercase tracking-wide flex items-center gap-3">
+                                <span class="w-2.5 h-2.5 bg-accent inline-block rounded-full"></span>
+                                Vlastní zákusky a dorty
+                            </h3>
+                            <ul class="space-y-2 text-base md:text-lg text-slate-600 list-disc ml-6">
+                                <li>Každý den čerstvé zákusky z naší výroby</li>
+                                <li>Dorty na zakázku pro každou příležitost</li>
+                                <li>Pečeme s láskou a z poctivých surovin</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 uppercase tracking-wide flex items-center gap-3">
+                                <span class="w-2.5 h-2.5 bg-accent inline-block rounded-full"></span>
+                                Pro všechny
+                            </h3>
+                            <ul class="space-y-2 text-base md:text-lg text-slate-600 list-disc ml-6">
+                                <li>LOW CARB (Nízkosacharidové)</li>
+                                <li>Gluten-free (Bez lepku)</li>
+                                <li>Sugar-free (Bez cukru)</li>
+                                <li>Milk-free (Bez mléka)</li>
+                                <li>Vegan možnosti</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galerie" class="py-16 md:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 text-center uppercase tracking-wide">Galerie</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mb-10 rounded-full"></div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="8414.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="8c83.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="c977.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="cb09.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="e006.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="f0ea.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="fc83.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                    <div class="aspect-square overflow-hidden rounded-lg"><img src="2fd5.jpeg" alt="Galerie" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reference" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2 text-center uppercase tracking-wide">Hodnocení zákazníků</h2>
+                <p class="text-center text-lg text-slate-600 mb-4">4,9 Fantastické ⭐ (19+ hodnocení na Googlu)</p>
+                <div class="w-16 h-1 bg-accent mx-auto mb-10 rounded-full"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <div class="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 border-b border-slate-100 pb-3 flex items-center justify-between">
+                                Katte Kačka
+                                <span class="text-accent text-sm">⭐⭐⭐⭐⭐</span>
+                            </h3>
+                            <p class="text-slate-600 italic mt-4 leading-relaxed">"Moc hezké bistro, byli jsme zde na snídani poprvé a určitě ne naposledy. Velmi milý personál, bezlaktózové a bezlepkové produkty. Za mě TOP. Výborná káva i čaj. Děkujeme a těšíme se na další návštěvu :-)))"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 border-b border-slate-100 pb-3 flex items-center justify-between">
+                                Ferdi D.
+                                <span class="text-accent text-sm">⭐⭐⭐⭐⭐</span>
+                            </h3>
+                            <p class="text-slate-600 italic mt-4 leading-relaxed">"Už delší dobu jsem hledala v okolí Kladna kavárnu, kde bych se dobře nasnídala. Že to ještě bude za skvělou cenu, v příjemném prostředí a s úžasnou obsluhou, v to už jsem ani nedoufala. A přece se podařilo. Jídlo a i nabídka jsou perfektní. Ingredience co paní majitelka používá jsou místní a čerstvé a je to poznat! Rozhodně se budu vracet, často."</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 border-b border-slate-100 pb-3 flex items-center justify-between">
+                                Tereza Uldrychova
+                                <span class="text-accent text-sm">⭐⭐⭐⭐⭐</span>
+                            </h3>
+                            <p class="text-slate-600 italic mt-4 leading-relaxed">"Naprosto dokonalé místo na snídani, oběd nebo jen tak na kávu. Majitelka je velmi milá a příjemná a občerstvení je naprosto dokonalé, jejich vejce Benedikt se rozplývají na jazyku a nic tu dokonalou snídani nezakončí tak, jako dort z piva Guiness 😊"</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 border-b border-slate-100 pb-3 flex items-center justify-between">
+                                Petr Dušek
+                                <span class="text-accent text-sm">⭐⭐⭐⭐⭐</span>
+                            </h3>
+                            <p class="text-slate-600 italic mt-4 leading-relaxed">"Mají výborné ledový čaj a i přes výslovnou žádost o objednání u pokladny na jídelním lístku nás obsloužili u stolu. Pěkné, klidné a rodinné místo."</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 border-b border-slate-100 pb-3 flex items-center justify-between">
+                                Míša Preisová
+                                <span class="text-accent text-sm">⭐⭐⭐⭐⭐</span>
+                            </h3>
+                            <p class="text-slate-600 italic mt-4 leading-relaxed">"Moc příjemná low carb kavárna – krásné prostředí, kde se člověk hned cítí dobře. Velké plus dávám milé a ochotné obsluze, která tomu dodává skvělou atmosféru. Dorty nejen skvěle chutnají, ale i nádherně vypadají. Určitě stojí za návštěvu, ráda se sem vrátím."</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 border-b border-slate-100 pb-3 flex items-center justify-between">
+                                Vladimír Týbl
+                                <span class="text-accent text-sm">⭐⭐⭐⭐⭐</span>
+                            </h3>
+                            <p class="text-slate-600 italic mt-4 leading-relaxed">"Dobrý den, dnes jsem chtěl s manželkou na snídani. A říkám si...kam. Napadlo mě Kladno a byl to dobrý tah. Z venku krásné a když jsem vešel, tak nás pozdravila milá paní, chvilku jsme počkali až se uvolní misto. A potom to začalo... krásná a chutná snídaně. DOPORUČUJI ...a já se rád zase vrátím."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="https://maps.app.goo.gl/A7TGTSbSuzP113BJ7?g_st=ic" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-primary hover:bg-slate-800 text-white font-medium rounded shadow-sm hover:shadow-md transition-all">
+                        Zobrazit všechny recenze na Googlu
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="kontakt" class="bg-primary text-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center uppercase tracking-wide">Kontakt</h2>
+            <div class="w-16 h-1 bg-accent mx-auto mb-14 rounded-full"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-gray-300">
+                
+                <div class="flex items-start gap-4">
+                    <div class="bg-white/10 p-3 flex-shrink-0 rounded-md">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-2 tracking-wide uppercase">Adresa</h4>
+                        <p class="leading-relaxed">Vašatova 1398,<br>272 01 Kladno</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="bg-white/10 p-3 flex-shrink-0 rounded-md">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-2 tracking-wide uppercase">Kontakt</h4>
+                        <ul class="space-y-3">
+                            <li><a href="tel:+420703977092" class="hover:text-accent hover:underline transition-all">+420 703 977 092</a></li>
+                            <li><a href="mailto:mbhkladno@gmail.com" class="hover:text-accent hover:underline transition-all">mbhkladno@gmail.com</a></li>
+                            <li class="pt-1">
+                                <a href="https://www.facebook.com/MomsBakehouseCZ?utm_source=firmy.cz&utm_medium=ppd&utm_campaign=firmy.cz-13370493" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover:underline transition-all flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    Mom's Bakehouse CZ
+                                </a>
+                            </li>
+                            <li class="pt-1">
+                                <a href="https://www.instagram.com/momsbakehouse_/?hl=cs" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover:underline transition-all flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                    @momsbakehouse_
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="bg-white/10 p-3 flex-shrink-0 rounded-md">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-2 tracking-wide uppercase">Otevírací doba</h4>
+                        <table class="w-full text-left text-gray-300">
+                            <tbody>
+                                <tr><td class="py-1 pr-4">Pondělí - Pátek</td><td class="py-1 font-semibold">8:00 - 17:00</td></tr>
+                                <tr><td class="py-1 pr-4">Sobota</td><td class="py-1 font-semibold">8:30 - 12:00</td></tr>
+                                <tr><td class="py-1 pr-4">Neděle</td><td class="py-1 font-semibold text-accent">Zavřeno</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="w-full h-80 md:h-96 mt-16 rounded-lg overflow-hidden border border-slate-700">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Va%C5%A1atova%201398,%20Kladno&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+                <p>&copy; 2026 Mom's Bakehouse CZ. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
